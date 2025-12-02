@@ -4,9 +4,6 @@ Release Sentinel is a Python-based deployment gatekeeper. It evaluates proposed
 release plans against policy, checks change windows, and aggregates service
 readiness signals before allowing or rejecting a rollout.
 
-This repository is designed for the Ambiguous Coding Task project as a realistic
-DevOps/infrastructure codebase with intentional but natural gaps:
-
 - Partial implementation of SLO and error-budget evaluation
 - Release policies that mix numeric and textual risk levels
 - Docs that reference a future `azure_boards` integration not fully wired up
