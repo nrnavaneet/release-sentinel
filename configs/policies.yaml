@@ -1,0 +1,15 @@
+default_max_risk: medium
+windows:
+  - name: weekday-business-hours
+    start: "09:00"
+    end: "18:00"
+    environments: ["staging", "production"]
+services:
+  - service: payments-api
+    max_risk: 3
+    require_canary: true
+    change_windows: ["weekday-business-hours"]
+  - service: web-frontend
+    max_risk: high
+    require_canary: false
+    change_windows: []

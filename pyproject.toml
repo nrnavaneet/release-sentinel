@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "release-sentinel"
+version = "0.1.0"
+description = "Deployment gatekeeper for evaluating release plans against policy."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Ambiguous Coding Task", email = "no-reply@example.com"}
+]
+dependencies = [
+  "typer>=0.12,<0.13",
+  "rich>=13.7,<14",
+  "pydantic>=2.7,<3",
+  "pyyaml>=6.0,<7"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-mock>=3.12,<4"
+]
+
+[project.scripts]
+release-sentinel = "release_sentinel.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+
+
